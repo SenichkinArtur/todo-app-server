@@ -1,8 +1,12 @@
-// import express from 'express';
+import express, { Express } from 'express';
 
-const func = (a: string): string => {
-    return a;
-};
+const app: Express = express();
+const port: number = 3100;
 
-console.log('func(): ', func('qwe'));
+app.get('/', (req, res) => {
+    res.send('get request to the home page');
+});
 
+app.listen(port, () => {
+    return console.log(`server is listening on ${port}`);
+});
