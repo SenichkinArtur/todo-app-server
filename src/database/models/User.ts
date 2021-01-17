@@ -13,7 +13,7 @@ export interface UserAttributes {
 
 export interface UserCreationAttributes extends Optional<UserAttributes, 'id' | 'createdAt' | 'updatedAt'> {}
 
-export default class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
+class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
   public id!: number;
   public first_name!: string;
   public last_name!: string;
@@ -53,3 +53,5 @@ User.init(
     sequelize,
   }
 );
+
+export default User;
